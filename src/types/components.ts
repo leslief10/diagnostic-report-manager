@@ -34,3 +34,18 @@ export interface UploadZoneProps {
 export interface UploadContentProps {
   isDragging: boolean;
 }
+
+export interface ErrorSectionProps {
+  error: string | null;
+  onDismiss: () => void;
+}
+
+export interface SearchSectionProps {
+  onSearch: (query: string) => void;
+}
+
+export interface MainContentProps {
+  error: string | null;
+  onDismissError: () => void;
+  onSearch: (query: string) => void;
+}
