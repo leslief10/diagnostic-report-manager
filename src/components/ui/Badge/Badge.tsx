@@ -1,5 +1,5 @@
 import { combineClasses } from '@/utils/utilityFunctions';
-import type { BadgeProps } from '@/types/types';
+import type { BadgeProps } from '@/types';
 
 export function Badge({ className, variant = 'default', ...props }: BadgeProps) {
   const variants = {

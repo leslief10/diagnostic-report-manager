@@ -1,5 +1,5 @@
 import { combineClasses } from '@/utils/utilityFunctions';
-import type { ButtonProps } from '@/types/types';
+import type { ButtonProps } from '@/types';
 
 export function Button({
   className,

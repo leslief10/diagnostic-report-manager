@@ -1,5 +1,5 @@
 import { combineClasses } from '@/utils/utilityFunctions';
-import type { ProgressBarProps } from '@/types/types';
+import type { ProgressBarProps } from '@/types';
 
 export function ProgressBar({ value, max = 100, label, showPercentage = true, className }: ProgressBarProps) {
   const percentage = Math.min(Math.max((value / max) * 100, 0), 100);

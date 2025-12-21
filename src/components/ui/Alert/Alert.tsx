@@ -1,5 +1,5 @@
 import { combineClasses } from '@/utils/utilityFunctions';
-import type { AlertProps } from '@/types/types';
+import type { AlertProps } from '@/types';
 
 export function Alert({ className, variant = 'info', title, children, ...props }: AlertProps) {
   const variants = {

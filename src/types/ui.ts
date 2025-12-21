@@ -1,30 +1,15 @@
 import type { ButtonHTMLAttributes, InputHTMLAttributes, HTMLAttributes } from 'react';
 
-export interface Report {
-  id: number;
-  name: string;
-  size: string;
-  type: 'Vibration' | 'Thermal';
-  date: string;
-}
-
-export interface ReportState {
-  reports: Report[];
-  searchQuery: string;
-  isLoading: boolean;
-  error: string | null;
-  uploadProgress: number;
-
-  fetchReports: () => Promise<void>;
-  uploadReport: (file: File) => Promise<void>;
-  setSearchQuery: (query: string) => void;
-  clearError: () => void;
-}
+export type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'outline' | 'transparent';
+export type ButtonSize = 'sm' | 'md' | 'lg';
+export type FontWeight = 'normal' | 'bold';
+export type BadgeVariant = 'default' | 'vibration' | 'thermal' | 'success' | 'warning' | 'danger';
+export type AlertVariant = 'info' | 'success' | 'warning' | 'danger';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'danger' | 'outline' | 'transparent';
-  size?: 'sm' | 'md' | 'lg';
-  font?: 'normal' | 'bold';
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  font?: FontWeight;
   isLoading?: boolean;
   fullWidth?: boolean;
 }
@@ -38,12 +23,11 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export interface SearchInputProps extends Omit<InputProps, 'type'> {
   value?: string;
-
   onClear?: () => void;
 }
 
 export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
-  variant?: 'default' | 'vibration' | 'thermal' | 'success' | 'warning' | 'danger';
+  variant?: BadgeVariant;
 }
 
 export interface ProgressBarProps {
@@ -55,6 +39,6 @@ export interface ProgressBarProps {
 }
 
 export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
-  variant?: 'info' | 'success' | 'warning' | 'danger';
+  variant?: AlertVariant;
   title?: string;
 }

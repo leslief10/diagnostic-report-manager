@@ -1,5 +1,5 @@
 import { Input } from './Input';
-import type { SearchInputProps } from '@/types/types';
+import type { SearchInputProps } from '@/types';
 
 export function SearchInput({ onClear, value, ...props }: SearchInputProps) {
   return (
