@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, InputHTMLAttributes } from 'react';
+import type { ButtonHTMLAttributes, InputHTMLAttributes, HTMLAttributes } from 'react';
 
 export interface Report {
   id: number;
@@ -40,4 +40,21 @@ export interface SearchInputProps extends Omit<InputProps, 'type'> {
   value?: string;
 
   onClear?: () => void;
+}
+
+export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
+  variant?: 'default' | 'vibration' | 'thermal' | 'success' | 'warning' | 'danger';
+}
+
+export interface ProgressBarProps {
+  value: number;
+  max?: number;
+  label?: string;
+  showPercentage?: boolean;
+  className?: string;
+}
+
+export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
+  variant?: 'info' | 'success' | 'warning' | 'danger';
+  title?: string;
 }
