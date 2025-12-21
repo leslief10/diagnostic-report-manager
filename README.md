@@ -295,20 +295,6 @@ interface ReportState {
 
 See individual component files in `src/components/ui/` for detailed props documentation. Components support standard HTML attributes plus custom variants, sizes, and styling options.
 
-## Testing
-
-The project includes comprehensive test suites:
-
-- **useSearch.test.tsx**: Tests for debouncing, value changes, clearing, and cleanup
-- **SearchStatus.test.tsx**: Tests for accessibility and dynamic updates
-- **utilityFunctions.test.ts**: Tests for utility functions
-
-Run tests with:
-
-```bash
-npm run test
-```
-
 ## Accessibility Features
 
 - Full keyboard navigation support
@@ -448,7 +434,7 @@ npm run build
 
 ```bash
 npm run test
-npm run test:ui
+npm run coverage
 ```
 
 ## Browser Support
