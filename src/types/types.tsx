@@ -35,3 +35,9 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   helperText?: string;
   fullWidth?: boolean;
 }
+
+export interface SearchInputProps extends Omit<InputProps, 'type'> {
+  value?: string;
+
+  onClear?: () => void;
+}

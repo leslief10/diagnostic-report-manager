@@ -1,6 +1,6 @@
 import { useId } from 'react';
-import { combineClasses } from '../../utils/utilityFunctions';
-import type { InputProps } from '../../types/types';
+import { combineClasses } from '@/utils/utilityFunctions';
+import type { InputProps } from '@/types/types';
 
 export function Input({ className, label, error, helperText, fullWidth, id, required, ...props }: InputProps) {
   const generatedId = useId();
