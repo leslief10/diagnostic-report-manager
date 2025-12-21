@@ -1,4 +1,4 @@
-import type { Report } from '../types/types';
+import type { Report } from '../types';
 import { delay } from '../utils/utilityFunctions';
 
 const initialReports: Report[] = [

@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { mockService } from '../services/mockService';
-import type { ReportState } from '../types/types';
+import type { ReportState } from '../types';
 
 export const useReportStore = create<ReportState>((set) => ({
   reports: [],

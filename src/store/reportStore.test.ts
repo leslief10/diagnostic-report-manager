@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { useReportStore } from './reportStore';
 import { mockService } from '../services/mockService';
 import * as utilityFunctions from '../utils/utilityFunctions';
-import type { Report } from '../types/types';
+import type { Report } from '../types';
 
 vi.mock('../services/mockService');
 vi.mock('../utils/utilityFunctions');
