@@ -1,3 +1,5 @@
+import type { ButtonHTMLAttributes, InputHTMLAttributes } from 'react';
+
 export interface Report {
   id: number;
   name: string;
@@ -17,4 +19,19 @@ export interface ReportState {
   uploadReport: (file: File) => Promise<void>;
   setSearchQuery: (query: string) => void;
   clearError: () => void;
+}
+
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary' | 'danger' | 'outline' | 'transparent';
+  size?: 'sm' | 'md' | 'lg';
+  font?: 'normal' | 'bold';
+  isLoading?: boolean;
+  fullWidth?: boolean;
+}
+
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  label?: string;
+  error?: string;
+  helperText?: string;
+  fullWidth?: boolean;
 }
