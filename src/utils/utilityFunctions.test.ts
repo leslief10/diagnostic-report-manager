@@ -26,10 +26,10 @@ describe('utilityFunctions', () => {
 
     it('should handle large delay values', async () => {
       const start = Date.now();
-      await delay(200);
+      await delay(500);
       const end = Date.now();
 
-      expect(end - start).toBeGreaterThanOrEqual(200);
+      expect(end - start).toBeGreaterThanOrEqual(500);
     });
   });
 
