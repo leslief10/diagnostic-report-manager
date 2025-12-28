@@ -1,36 +1,18 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import type { UseSearchProps } from '@/types';
 
 const DEBOUNCE_DELAY = 300;
 
 export function useSearch({ onSearch }: UseSearchProps) {
   const [localValue, setLocalValue] = useState('');
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const isMountedRef = useRef(true);
 
   useEffect(() => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
-    timeoutRef.current = setTimeout(() => {
-      if (isMountedRef.current) {
-        onSearch(localValue);
-      }
+    const timer = setTimeout(() => {
+      onSearch(localValue);
     }, DEBOUNCE_DELAY);
 
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
+    return () => clearTimeout(timer);
   }, [localValue, onSearch]);
-
-  useEffect(() => {
-    return () => {
-      isMountedRef.current = false;
-    };
-  }, []);
 
   const handleValueChange = useCallback((value: string) => {
     setLocalValue(value);
@@ -38,10 +20,6 @@ export function useSearch({ onSearch }: UseSearchProps) {
 
   const handleClear = useCallback(() => {
     setLocalValue('');
-
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
     onSearch('');
   }, [onSearch]);
 
