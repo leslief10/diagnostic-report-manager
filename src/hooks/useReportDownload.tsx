@@ -1,4 +1,4 @@
-import type { Report } from '@/types/types';
+import type { Report } from '@/types';
 
 export function useReportDownload() {
   const handleDownload = (report: Report) => {
